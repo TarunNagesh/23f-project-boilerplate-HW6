@@ -40,23 +40,23 @@ def get_customer(userID):
 def update_customer():
     
     # collecting data from the request object 
-    the_data = request.json
+    cust_info = request.json
     # current_app.logger.info(the_data)
 
     #extracting the variable
-    cust_id = the_data['id']
-    cust_first_name = the_data['first_name']
-    cust_last_name = the_data['last_name']
-    cust_company = the_data['company']   
-    cust_job = the_data['job_title']
-    cust_biz_phone = the_data['business_phone']
+    cust_id = cust_info['id']
+    cust_first_name = cust_info['first_name']
+    cust_last_name = cust_info['last_name']
+    cust_company = cust_info['company']   
+    cust_job = cust_info['job_title']
+    cust_biz_phone = cust_info['business_phone']
 
 
     # Constructing the query
-    #query = 'UPDATE customers SET first_name = %s, last_name = %s, company = %s,  job_title = %s, business_phone = %s WHERE id = %s'
-    #data = (cust_first_name, cust_last_name, cust_company, cust_job, cust_biz_phone, cust_id)
+    query = 'UPDATE customers SET first_name = %s, last_name = %s, company = %s,  job_title = %s, business_phone = %s WHERE id = %s'
+    data = (cust_first_name, cust_last_name, cust_company, cust_job, cust_biz_phone, cust_id)
     # current_app.logger.info(query)
-    query = 'UPDATE customers SET company = "Fish" WHERE id = 30'
+    #query = 'UPDATE customers SET company = "Fish" WHERE id = 30'
     
     # executing and committing the update statement 
     cursor = db.get_db().cursor()
