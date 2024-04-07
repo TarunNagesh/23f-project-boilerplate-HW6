@@ -45,25 +45,21 @@ def update_customer():
 
     #extracting the variable
     cust_id = the_data['id']
-    cust_company = the_data['company']
-    cust_last_name = the_data['last_name']
     cust_first_name = the_data['first_name']
+    cust_last_name = the_data['last_name']
+    cust_company = the_data['company']   
     cust_job = the_data['job_title']
     cust_biz_phone = the_data['business_phone']
 
 
     # Constructing the query
-    #query = 'UPDATE customers SET company = ' + cust_company + ', '
-    #query += 'last_name = ' + cust_last_name + ', '
-    #query += 'first_name = ' + cust_first_name + ', '
-    #query += 'job_title = ' + cust_job + ', '
-    #query += 'business_phone = ' + cust_biz_phone
-    #query += 'WHERE id = ' + cust_id
+    query = 'UPDATE customers SET first_name = %s, last_name = %s, company = %s,  job_title = %s, business_phone = %s WHERE id = %s'
+    data = (cust_first_name, cust_last_name, cust_company, cust_job, cust_biz_phone, cust_id)
     # current_app.logger.info(query)
     
     # executing and committing the update statement 
-    #cursor = db.get_db().cursor()
-    #cursor.execute(query)
-    #db.get_db().commit()
+    cursor = db.get_db().cursor()
+    cursor.execute(query)
+    db.get_db().commit()
     
     return 'Success!'
