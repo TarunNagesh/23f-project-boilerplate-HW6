@@ -42,16 +42,14 @@ def update_customer():
     # collecting data from the request object 
     the_data = request.json
     # current_app.logger.info(the_data)
-    
+
     #extracting the variable
-    cust_id = the_data["id"]
-    cust_company = the_data["company"]
-    cust_last_name = the_data["last_name"]
-    cust_first_name = the_data["first_name"]
-    cust_job = the_data["job_title"]
-    cust_biz_phone = the_data["business_phone"]
-
-
+    cust_id = the_data['id']
+    cust_company = the_data['company']
+    cust_last_name = the_data['last_name']
+    cust_first_name = the_data['first_name']
+    cust_job = the_data['job_title']
+    cust_biz_phone = the_data['business_phone']
 
     # Constructing the query
     query = 'UPDATE customers SET company = ' + cust_company + ', '
