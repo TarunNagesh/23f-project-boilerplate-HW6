@@ -56,8 +56,8 @@ def update_customer():
     #query = 'UPDATE customers SET first_name = %s, last_name = %s, company = %s,  job_title = %s, business_phone = %s WHERE id = %s'
     #data = (cust_first_name, cust_last_name, cust_company, cust_job, cust_biz_phone, cust_id)
     # current_app.logger.info(query)
-    query = 'UPDATE customers SET job_title = ' + cust_job + ' WHERE id = %s'
-    data = (cust_id)
+    query = 'UPDATE customers SET company = %s WHERE id = %s'
+    data = (cust_company, cust_id)
     
     # executing and committing the update statement 
     cursor = db.get_db().cursor()
