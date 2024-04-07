@@ -47,7 +47,7 @@ def update_customer():
     cust_id = the_data['id']
     cust_first_name = the_data['first_name']
     cust_last_name = the_data['last_name']
-    cust_company = the_data['company']   
+    cust_company = the_data["company"]   
     cust_job = the_data['job_title']
     cust_biz_phone = the_data['business_phone']
 
